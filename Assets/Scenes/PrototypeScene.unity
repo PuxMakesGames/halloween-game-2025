@@ -595,6 +595,8 @@ GameObject:
   - component: {fileID: 726159808}
   - component: {fileID: 726159807}
   - component: {fileID: 726159806}
+  - component: {fileID: 726159810}
+  - component: {fileID: 726159809}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -609,7 +611,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 726159805}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: e016056a4cf327b48bd8c8ed92303440, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -668,6 +670,31 @@ Transform:
   - {fileID: 1879354700}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &726159809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726159805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73fd6d0da42ca66479217c1f271d14bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PuxMakesGames.Halloween2025.PlayerController
+--- !u!114 &726159810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726159805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b2f0ca74c5e4e1488e9ac8a08cc0891, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PuxMakesGames.Halloween2025.CharacterMotor
+  moveSpeed: 10
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
