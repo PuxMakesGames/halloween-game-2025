@@ -12,6 +12,7 @@ namespace PuxMakesGames.Halloween2025
 
         // Input
         private InputAction moveAction;
+        private InputAction lookAction;
 
 
         private void Awake()
@@ -21,6 +22,7 @@ namespace PuxMakesGames.Halloween2025
 
             // Cache input actions
             moveAction = InputSystem.actions.FindAction("Move");
+            lookAction = InputSystem.actions.FindAction("Look");
         }
 
         private void Update()
@@ -28,6 +30,10 @@ namespace PuxMakesGames.Halloween2025
             // Handle character movement
             var moveDirection = moveAction.ReadValue<Vector2>();
             motor.Move(moveDirection);
+
+            // Handle character look rotation
+            var lookDirection = lookAction.ReadValue<Vector2>();
+            motor.Look(lookDirection);
         }
     }
 }

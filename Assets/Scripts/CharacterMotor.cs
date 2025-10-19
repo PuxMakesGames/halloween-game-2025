@@ -12,7 +12,10 @@ namespace PuxMakesGames.Halloween2025
         private Rigidbody rb;
 
         // Movement data
-        private Vector3 inputDirection;
+        private Vector3 inputMoveDirection;
+
+        // Rotation data
+        private Vector3 inputLookDirection;
 
         private void Awake()
         {
@@ -23,22 +26,31 @@ namespace PuxMakesGames.Halloween2025
         private void Update()
         {
             // Handle character rotation
-            if (inputDirection.sqrMagnitude > 0.01f)
+            if (inputLookDirection.sqrMagnitude > 0.01f)
             {
-                transform.rotation = Quaternion.LookRotation(inputDirection);
+                transform.rotation = Quaternion.LookRotation(inputLookDirection);
+            }
+            else if (inputMoveDirection.sqrMagnitude > 0.01f)
+            {
+                transform.rotation = Quaternion.LookRotation(inputMoveDirection);
             }
         }
 
         private void FixedUpdate()
         {
             // Handle movement
-            var targetVelocity = inputDirection * moveSpeed;
+            var targetVelocity = inputMoveDirection * moveSpeed;
             rb.linearVelocity = targetVelocity;
         }
 
         public void Move(Vector2 direction)
         {
-            inputDirection = new Vector3(direction.x, 0f, direction.y);
+            inputMoveDirection = new Vector3(direction.x, 0f, direction.y);
+        }
+
+        public void Look(Vector2 direction)
+        {
+            inputLookDirection = new Vector3(direction.x, 0f, direction.y);
         }
     }
 }
