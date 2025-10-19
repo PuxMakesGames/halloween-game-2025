@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 
 namespace PuxMakesGames.Halloween2025
 {
+    [SelectionBase]
     [RequireComponent(typeof(CharacterMotor))]
     public class PlayerController : MonoBehaviour
     {
